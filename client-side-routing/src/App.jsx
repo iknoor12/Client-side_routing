@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route, Link } from "react-router-dom";
+
+// function Home() {
+//   return <h2 className="text-xl">Home Page</h2>;
+// }
+
+// function About() {
+//   return <h2 className="text-xl">About Page</h2>;
+// }
+
+// function Contact() {
+//   return <h2 className="text-xl">Contact Page</h2>;
+// }
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="p-5 grid place-items-center">
+
+      {/* Navigation */}
+      {/* <nav className="flex gap-10 mb-10">
+        <Link to="/" className="text-blue-500">Home</Link>
+        <Link to="/about" className="text-blue-500">About</Link>
+        <Link to="/contact" className="text-blue-500">Contact</Link>
+      </nav> */}
+
+      {/* Routes */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+
+    </div>
+  );
 }
 
-export default App
+export default App;
